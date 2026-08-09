@@ -525,3 +525,88 @@ jq --version
 jq-1.7
 ```
 ---
+
+# Step 7: Deploy Infrastructure & Configuration Tools
+
+Install **Terraform** for Infrastructure as Code (IaC) and **Ansible** for automated configuration management.
+
+---
+
+# Install Terraform
+
+## 1. Update Your System
+
+```bash
+sudo apt update
+sudo apt install -y gnupg software-properties-common curl
+```
+
+---
+
+## 2. Add the HashiCorp GPG Key
+
+```bash
+curl -fsSL https://apt.releases.hashicorp.com/gpg | \
+sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
+
+---
+
+## 3. Add the HashiCorp Repository
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
+
+---
+
+## 4. Install Terraform
+
+```bash
+sudo apt update
+sudo apt install terraform -y
+```
+
+---
+
+## 5. Verify the Installation
+
+```bash
+terraform version
+```
+
+```text
+Terraform v1.15.8
+on linux_amd64
+```
+---
+
+# Install Ansible
+
+## 1. Update the Package List
+
+```bash
+sudo apt update
+```
+
+---
+
+## 2. Install Ansible
+
+```bash
+sudo apt install ansible -y
+```
+
+---
+
+## 3. Verify the Installation
+
+```bash
+ansible --version
+```
+
+![ansible version](ansible_version.png)
+
+---
