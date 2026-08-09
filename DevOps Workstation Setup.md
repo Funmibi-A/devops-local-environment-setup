@@ -610,3 +610,111 @@ ansible --version
 ![ansible version](ansible_version.png)
 
 ---
+
+# Step 8: Verification and Security
+
+After installing all the required tools, verify each tool is installed correctly and confirm that your user has the necessary permissions.
+
+---
+
+# Verify Installed Tools
+
+Run the following commands to check the installed versions:
+
+```bash
+git --version
+code --version
+docker --version
+docker compose version
+kubectl version --client
+minikube version
+helm version
+node -v
+npm -v
+terraform version
+ansible --version
+```
+![verification](verification.png)
+---
+
+# 2. Verify Docker Permissions
+
+Ensure your user belongs to the `docker` group:
+
+```bash
+groups
+```
+![docker_verification](docker_verification.png)
+
+Apply the change without logging out:
+
+```bash
+newgrp docker
+```
+
+Verify Docker can be run without `sudo`:
+
+```bash
+docker run hello-world
+```
+
+![docker_run](docker_run.png)
+---
+
+# 3. Verify Kubernetes
+
+Check that `kubectl` can communicate with your cluster:
+
+```bash
+kubectl cluster-info
+```
+![kubectl cluster-info](kube_1.png)
+![kubectl cluser-info](kube_3.png)
+
+View the cluster nodes:
+
+```bash
+kubectl get nodes
+```
+![kubectl get nodes](kube_2.png)
+---
+
+# 4. Verify Minikube
+
+Check the Minikube status:
+
+```bash
+minikube status
+```
+![kubectl get nodes](minikube_status_2.png)
+
+---
+
+# 5. Verify Helm
+
+List configured Helm repositories:
+
+```bash
+helm repo list
+```
+![helm repo list](helm_repo_list.png)
+
+---
+
+# 6. Verify Terraform
+
+Initialize a temporary working directory:
+
+```bash
+mkdir terraform-test
+cd terraform-test
+terraform init
+cd ..
+rm -rf terraform-test
+```
+![terraform test](terraform_test.png)
+
+---
+
+
+
