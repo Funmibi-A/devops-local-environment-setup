@@ -297,7 +297,6 @@ docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
-
 ---
 
 # Verify Docker Service
@@ -310,7 +309,6 @@ This command displays information about the Docker Engine, including storage dri
 
 ---
 ![docker_info](docker_info.png)
-
 
 
 # Step 6: Configure Cloud and Language Runtimes
@@ -369,7 +367,7 @@ aws --version
 ```
 
 ```text
-aws-cli/2.36.17 Python/3.14.6 Linux/6.6.87.2-microsoft-standard-WSL2 exe/x86_64.ubuntu.24
+aws-cli/2.36.17 Python/3.14.6 Linux/6.6.87.2-microsoft-standard-WSL2 exe/x86_64.ubuntu.24.
 ```
 ---
 
@@ -381,13 +379,12 @@ If an AWS account is available, configure the CLI.
 aws configure
 ```
 
-The following information will be requested:
+The following information was requested:
 
 - AWS Access Key ID
 - AWS Secret Access Key
 - Default Region
 - Default Output Format
-
 ---
 ![aws version](aws_version.png)
 
