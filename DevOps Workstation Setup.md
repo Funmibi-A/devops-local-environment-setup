@@ -26,7 +26,7 @@ The workstation provides:
 - 24 GB of installed RAM.
 - An Intel Core i5-1135G7 processor with Intel VT-x virtualization support.
 - Approximately 954 GB of available storage within the Ubuntu environment.
-- A fully compatible environment for installing Git, Visual Studio Code, Docker, Kubernetes (Minikube), Terraform, Ansible, and other DevOps tools.
+- A fully compatible environment for installing Git, Visual Studio Code, Docker, Kubernetes (/Minikube), Terraform, Ansible, and other DevOps tools.
 
 
 # Step 2: Establish Version Control
@@ -93,7 +93,7 @@ To enable secure authentication with GitHub or GitLab, an SSH key pair was gener
 ```bash
 ssh-keygen -t ed25519 -C "funmibiadedokun81@gmail.com"
 ```
-![generate ssh](generate_ssh.png)
+![generate ssh](images/generate_ssh.png)
 
 ## Display the Public Key
 
@@ -115,7 +115,7 @@ After adding the SSH key to GitHub, the connection was tested.
 ssh -T git@github.com
 ```
 
-![ssh_test](ssh_test.png)
+![ssh_test](images/ssh_test.png)
 
 ---
 
@@ -185,7 +185,7 @@ GitHub Copilot
 6. Sign in using your GitHub account when prompted.
 7. Authorize Visual Studio Code to access GitHub Copilot.
 
-![github_copilot](github_copilot.png)
+![github_copilot](images/github_copilot.png)
 
 
 # Step 4: Install Containerization Tools
@@ -308,7 +308,7 @@ docker info
 This command displays information about the Docker Engine, including storage driver, container runtime, images, and system resources.
 
 ---
-![docker_info](docker_info.png)
+![docker_info](images/docker_info.png)
 
 
 # Step 6: Configure Cloud and Language Runtimes
@@ -386,7 +386,7 @@ The following information was requested:
 - Default Region
 - Default Output Format
 ---
-![aws version](aws_version.png)
+![aws version](images/aws_version.png)
 
 # Install Azure CLI
 
@@ -451,7 +451,7 @@ az login
 
 # Install Node.js
 
-## Download and Install NVM (Node Version Manager)
+## Download and Install NVM (/Node Version Manager)
 
 Run the following command to install **NVM**:
 
@@ -528,7 +528,7 @@ jq-1.7
 
 # Step 7: Deploy Infrastructure & Configuration Tools
 
-Install **Terraform** for Infrastructure as Code (IaC) and **Ansible** for automated configuration management.
+Install **Terraform** for Infrastructure as Code (/IaC) and **Ansible** for automated configuration management.
 
 ---
 
@@ -607,7 +607,7 @@ sudo apt install ansible -y
 ansible --version
 ```
 
-![ansible version](ansible_version.png)
+![ansible version](images/ansible_version.png)
 
 ---
 
@@ -634,7 +634,7 @@ npm -v
 terraform version
 ansible --version
 ```
-![verification](verification.png)
+![verification](images/verification.png)
 ---
 
 # 2. Verify Docker Permissions
@@ -644,7 +644,7 @@ Ensure your user belongs to the `docker` group:
 ```bash
 groups
 ```
-![docker_verification](docker_verification.png)
+![docker_verification](images/docker_verification.png)
 
 Apply the change without logging out:
 
@@ -658,7 +658,7 @@ Verify Docker can be run without `sudo`:
 docker run hello-world
 ```
 
-![docker_run](docker_run.png)
+![docker_run](images/docker_run.png)
 ---
 
 # 3. Verify Kubernetes
@@ -668,15 +668,15 @@ Check that `kubectl` can communicate with your cluster:
 ```bash
 kubectl cluster-info
 ```
-![kubectl cluster-info](kube_1.png)
-![kubectl cluser-info](kube_3.png)
+![kubectl cluster-info](images/kube_1.png)
+![kubectl cluser-info](images/kube_3.png)
 
 View the cluster nodes:
 
 ```bash
 kubectl get nodes
 ```
-![kubectl get nodes](kube_2.png)
+![kubectl get nodes](images/kube_2.png)
 ---
 
 # 4. Verify Minikube
@@ -686,7 +686,7 @@ Check the Minikube status:
 ```bash
 minikube status
 ```
-![kubectl get nodes](minikube_status_2.png)
+![kubectl get nodes](images/minikube_status_2.png)
 
 ---
 
@@ -697,7 +697,7 @@ List configured Helm repositories:
 ```bash
 helm repo list
 ```
-![helm repo list](helm_repo_list.png)
+![helm repo list](images/helm_repo_list.png)
 
 ---
 
@@ -712,7 +712,7 @@ terraform init
 cd ..
 rm -rf terraform-test
 ```
-![terraform test](terraform_test.png)
+![terraform test](images/terraform_test.png)
 
 ---
 
