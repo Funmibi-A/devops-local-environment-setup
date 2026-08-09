@@ -157,3 +157,32 @@ Steps:
 2. Select the **Extensions** icon.
 3. Search for **WSL**.
 4. Install the extension published by Microsoft.
+
+
+# Step 3: Integrate AI Capabilities
+
+## Objective
+
+The objective of this step is to integrate AI-assisted development tools into the DevOps workstation. 
+
+---
+
+# Install GitHub Copilot
+
+GitHub Copilot was installed from the Visual Studio Code Marketplace.
+
+## Installation Steps
+
+1. Launch Visual Studio Code.
+2. Open the **Extensions** panel.
+3. Search for:
+
+```
+GitHub Copilot
+```
+4. Select the extension published by **GitHub**.
+5. Click **Install**.
+6. Sign in using your GitHub account when prompted.
+7. Authorize Visual Studio Code to access GitHub Copilot.
+
+![github_copilot](github_copilot.png)
