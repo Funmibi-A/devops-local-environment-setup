@@ -43,3 +43,39 @@ DevOps Workstation Submission/
 └── 04-Setup-Logic/
     |-- README.md
 ```
+
+
+## Evidence
+
+### Local Tools
+
+**Git**
+
+![Git installed](images/git-version.png)
+
+**VSCode**
+
+![VSCode installed](images/vscode-about.png)
+
+
+### Cloud Accounts
+**GitHub**
+![GitHub profile](images/github-profile.png)
+
+**AWS**
+
+![AWS console](images/aws-console.png)
+
+**Azure**
+
+![Azure portal](images/azure-portal.png)
+
+### Cloud CLI Tools
+
+**AWS CLI**
+
+![AWS CLI](images/aws-cli-version.png)
+
+**Azure CLI**
+
+![Azure CLI](images/az-cli-version.png)
