@@ -186,3 +186,127 @@ GitHub Copilot
 7. Authorize Visual Studio Code to access GitHub Copilot.
 
 ![github_copilot](github_copilot.png)
+
+
+# Step 4: Install Containerization Tools
+
+## Objective
+
+The objective of this step is to install and configure Docker and Docker Compose to provide a containerized development environment. 
+
+---
+
+# Install Docker
+
+Docker Engine and Docker CLI were installed using Docker's official installation script.
+
+## Update Package Repository
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+## Install Required Dependencies
+
+```bash
+sudo apt install -y ca-certificates curl gnupg lsb-release
+```
+
+## Install Docker
+
+```bash
+# Add Docker's official GPG key:
+sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+```
+---
+
+# Configure Docker
+
+To allow the current user to run Docker commands without using `sudo`, the user was added to the Docker group.
+
+## Command
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+Apply the group changes.
+
+```bash
+newgrp docker
+```
+
+---
+# Verify Docker Installation
+
+Verify that Docker was successfully installed.
+
+## Command
+
+```bash
+docker --version
+```
+
+```text
+Docker version 29.7.1, build e9452d6
+```
+---
+
+# Verify Docker Compose
+
+Docker Compose is included with modern Docker installations as a Docker CLI plugin.
+
+## Command
+
+```bash
+docker compose version
+```
+
+```text
+Docker Compose version v5.4.0
+```
+---
+
+# Test Docker
+Run the official Docker Hello World container.
+
+## Command
+
+```bash
+docker run hello-world
+```
+
+```text
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+
+---
+
+# Verify Docker Service
+
+```bash
+docker info
+```
+
+This command displays information about the Docker Engine, including storage driver, container runtime, images, and system resources.
+
+---
+![docker_info](docker_info.png)
