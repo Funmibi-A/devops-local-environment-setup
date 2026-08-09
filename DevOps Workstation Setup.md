@@ -310,3 +310,221 @@ This command displays information about the Docker Engine, including storage dri
 
 ---
 ![docker_info](docker_info.png)
+
+
+
+# Step 6: Configure Cloud and Language Runtimes
+
+## Objective
+
+The objective of this step is to install and configure the essential cloud command-line interfaces (CLIs) and development runtimes required for modern DevOps workflows.
+
+---
+# Update the System
+
+## Command
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+---
+
+# Install AWS CLI
+The AWS Command Line Interface (AWS CLI) provides a unified interface for managing AWS services directly from the terminal.
+
+## Download AWS CLI
+
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```
+
+## Install unzip
+
+```bash
+sudo apt install unzip -y
+```
+
+## Extract the Installer
+
+```bash
+unzip awscliv2.zip
+```
+
+## Install AWS CLI
+
+```bash
+sudo ./aws/install
+```
+
+---
+
+# Verify AWS CLI Installation
+
+## Command
+
+```bash
+aws --version
+```
+
+```text
+aws-cli/2.36.17 Python/3.14.6 Linux/6.6.87.2-microsoft-standard-WSL2 exe/x86_64.ubuntu.24
+```
+---
+
+# Configure AWS CLI
+
+If an AWS account is available, configure the CLI.
+
+```bash
+aws configure
+```
+
+The following information will be requested:
+
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default Region
+- Default Output Format
+
+---
+![aws version](aws_version.png)
+
+# Install Azure CLI
+
+The Azure CLI enables management of Microsoft Azure resources directly from the command line.
+
+## Install Dependencies
+
+```bash
+sudo apt install ca-certificates curl apt-transport-https lsb-release gnupg -y
+```
+
+## Import Microsoft's Signing Key
+
+```bash
+curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+gpg --dearmor | \
+sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+```
+
+## Add the Azure CLI Repository
+
+```bash
+AZ_REPO=$(lsb_release -cs)
+
+echo "deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+sudo tee /etc/apt/sources.list.d/azure-cli.list
+```
+
+## Install Azure CLI
+
+```bash
+sudo apt update
+sudo apt install azure-cli -y
+```
+
+---
+
+# Verify Azure CLI
+
+```bash
+az version
+```
+
+```text
+{
+  "azure-cli": "2.89.0",
+  "azure-cli-core": "2.89.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {}
+}
+```
+
+---
+
+# Login to Azure
+
+```bash
+az login
+```
+
+---
+
+# Install Node.js
+
+## Download and Install NVM (Node Version Manager)
+
+Run the following command to install **NVM**:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
+```
+---
+
+## Load NVM Without Restarting the Terminal
+
+Instead of closing and reopening your terminal, load NVM into your current shell:
+
+```bash
+\. "$HOME/.nvm/nvm.sh" or source ~/.bashrc
+```
+
+---
+
+## 3. Install Node.js
+
+Install the latest Node.js v24 release:
+
+```bash
+nvm install 24
+```
+
+---
+
+## 4. Verify the Installation
+
+### Check the Node.js version
+
+```bash
+node -v
+```
+
+```text
+v24.19.0
+```
+
+### Check the npm version
+
+```bash
+npm -v
+```
+
+```text
+11.17.0
+```
+
+---
+
+# Install jq
+
+The `jq` utility is a lightweight command-line JSON processor frequently used in shell scripts, CI/CD pipelines, and cloud automation.
+
+## Install jq
+
+```bash
+sudo apt install jq -y
+```
+---
+
+# Verify jq
+
+```bash
+jq --version
+```
+
+```text
+jq-1.7
+```
+---
